@@ -35,6 +35,8 @@ export WEB_CONCURRENCY=$WEB_CONCURRENCY
 
 if (( WEB_CONCURRENCY > 1 )); then
   export CLUSTER_WORKERS_COUNT=$WEB_CONCURRENCY
+else
+  unset CLUSTER_WORKERS_COUNT
 fi
 
 if [ "$LOG_CONCURRENCY" = "true" ]; then
